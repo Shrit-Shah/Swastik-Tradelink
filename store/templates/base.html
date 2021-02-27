@@ -347,12 +347,12 @@
                             </div>
                             <div class="cell-view">
                                 <div class="payment-methods">
-                                    <a href="#"><img alt="" src="img/payment-method-1.png"></a>
-                                    <a href="#"><img alt="" src="img/payment-method-2.png"></a>
-                                    <a href="#"><img alt="" src="img/payment-method-3.png"></a>
-                                    <a href="#"><img alt="" src="img/payment-method-4.png"></a>
-                                    <a href="#"><img alt="" src="img/payment-method-5.png"></a>
-                                    <a href="#"><img alt="" src="img/payment-method-6.png"></a>
+                                    <a href="#"><img alt="" src="{% static 'img/payment-method-1.png' %}"></a>
+                                    <a href="#"><img alt="" src="{% static 'img/payment-method-2.png' %}"></a>
+                                    <a href="#"><img alt="" src="{% static 'img/payment-method-3.png' %}"></a>
+                                    <a href="#"><img alt="" src="{% static 'img/payment-method-4.png' %}"></a>
+                                    <a href="#"><img alt="" src="{% static 'img/payment-method-5.png' %}"></a>
+                                    <a href="#"><img alt="" src="{% static 'img/payment-method-6.png' %}"></a>
                                 </div>
                             </div>
                         </div>
@@ -416,7 +416,7 @@
                 navPrevNext: true,
                 navStartStop: false,
                 navButtons: false,
-                skinsPath: 'layerslider/skins/'
+                skinsPath: "{% static 'layerslider/skins/' %}"
             });
 
 
