@@ -149,8 +149,8 @@
             ============================================= -->
             <div id="products" class="row">
                 <!-- Product Items -->
+                {% for product in products %}
                 <div class="col-xs-12 col-sm-6 col-md-3 product-item filter-best">
-                    {% for product in products %}
                     <div class="product-img" id={{product.id}}>
                         <img src="{{product.image.url}}" alt="product" style="width: 16rem;">
                         <div class="product-hover">
@@ -166,351 +166,353 @@
                         </h4>
                         <p class="product-price">Rs {{product.price}}</p>
                     </div>
-                    <!-- .product-bio end -->
-                    {% endfor %}
                 </div>
-                <!-- .product-item end -->
-
-
-
-
-
-    <!-- Start Our Shop Items -->
-
-    <!-- recommend  items Starts -->
-    <section id="recent-product">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="recent-items">
-
-                        <!-- Block heading two -->
-                        <div class="block-heading-two">
-                            <h3><span>Recommended Items</span></h3>
-                        </div>
-
-                        <!-- Owl carousel block starts -->
-                        <!-- Change values of data-items, data-auto-play, data-pagination & data-single-item based on your needs -->
-                        <div class="owl-carousel" data-items="5" data-auto-play="true" data-pagination="true" data-single-item="false">
-                            <!-- Carousel item -->
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class=" product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product1.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product2.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product3.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product4.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product5.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product6.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product7.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product8.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product1.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                            <div class="owl-content">
-                                <!-- Product Item #8 -->
-                                <div class="product-item filter-best">
-                                    <div class="product-img">
-                                        <img src="{% static 'img/shop/index3_product2.png' %}" alt="product">
-                                        <div class="product-hover">
-                                            <div class="product-cart">
-                                                <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- .product-img end -->
-                                    <div class="product-bio">
-                                        <h4>
-                                            <a href="#">Keson Fiberglass</a>
-                                        </h4>
-                                        <p class="product-price">$550.00</p>
-                                    </div>
-                                    <!-- .product-bio end -->
-
-                                </div>
-                                <!-- .product-item end -->
-                            </div>
-                        </div>
-                        <!-- Owl carousel block ends -->
-
-                    </div>
-                </div>
+                <!-- .product-bio end -->
+                {% endfor %}
             </div>
-        </div>
-    </section>
-
-    <!-- recommend items Ends -->
-
-    <!-- End Our Shop Items -->
+            <!-- .product-item end -->
 
 
-    <section class="block parallax-block">
-        <div class="layer">
-            <div data-velocity="-.3" style="background: url(img/resource/main-slide2.jpg) repeat scroll 50% 422.28px transparent;" class="parallax no-repeat"></div>
-            <!-- PARALLAX BACKGROUND IMAGE -->
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="lookbook-product">
-                            <h2><a href="#" title="">Collection 2016 </a></h2>
-                            <ul class="simple-cat-style">
-                                <li><a href="#" title="">Dresses</a></li>
-                                <li><a href="#" title="">Coats & Jackets</a></li>
-                                <li><a href="#" title="">Jeans</a></li>
-                            </ul>
-                            <a href="#" title="">read more</a>
+
+
+
+            <!-- Start Our Shop Items -->
+
+            <!-- recommend  items Starts -->
+            <section id="recent-product">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="recent-items">
+
+                                <!-- Block heading two -->
+                                <div class="block-heading-two">
+                                    <h3><span>Recommended Items</span></h3>
+                                </div>
+
+                                <!-- Owl carousel block starts -->
+                                <!-- Change values of data-items, data-auto-play, data-pagination & data-single-item based on your needs -->
+                                <div class="owl-carousel" data-items="5" data-auto-play="true" data-pagination="true" data-single-item="false">
+                                    <!-- Carousel item -->
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class=" product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product1.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product2.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product3.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product4.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product5.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product6.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product7.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product8.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product1.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                    <div class="owl-content">
+                                        <!-- Product Item #8 -->
+                                        <div class="product-item filter-best">
+                                            <div class="product-img">
+                                                <img src="{% static 'img/shop/index3_product2.png' %}" alt="product">
+                                                <div class="product-hover">
+                                                    <div class="product-cart">
+                                                        <a class="btn btn-secondary btn-block" href="#">Add To Cart</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- .product-img end -->
+                                            <div class="product-bio">
+                                                <h4>
+                                                    <a href="#">Keson Fiberglass</a>
+                                                </h4>
+                                                <p class="product-price">$550.00</p>
+                                            </div>
+                                            <!-- .product-bio end -->
+
+                                        </div>
+                                        <!-- .product-item end -->
+                                    </div>
+                                </div>
+                                <!-- Owl carousel block ends -->
+
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-    <section class="block gray no-padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="content-box no-margin go-simple">
-                        <div class="mini-service-sec">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <div class="mini-service">
-                                        <i class="fa fa-truck"></i>
-                                        <div class="mini-service-info">
-                                            <h3>All India Delivery</h3>
-                                        </div>
-                                    </div>
-                                    <!-- Mini Service -->
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="mini-service">
-                                        <i class="fa fa-check" aria-hidden="true"></i>
-                                        <div class="mini-service-info">
-                                            <h3>All bill with GST invoice</h3>
-                                        </div>
-                                    </div>
-                                    <!-- Mini Service -->
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="mini-service">
-                                        <i class="fa fa-desktop"></i>
-                                        <div class="mini-service-info">
-                                            <h3>Best Priceing</h3>
-                                        </div>
-                                    </div>
-                                    <!-- Mini Service -->
-                                </div>
-                                <div class="col-md-3">
-                                    <div class="mini-service">
-                                        <i class="fa  fa-windows"></i>
-                                        <div class="mini-service-info">
-                                            <h3>Buy Lisence windows</h3>
-                                        </div>
-                                    </div>
-                                    <!-- Mini Service -->
+            </section>
+
+            <!-- recommend items Ends -->
+
+            <!-- End Our Shop Items -->
+
+
+            <section class="block parallax-block">
+                <div class="layer">
+                    <div data-velocity="-.3" style="background: url(img/resource/main-slide2.jpg) repeat scroll 50% 422.28px transparent;" class="parallax no-repeat"></div>
+                    <!-- PARALLAX BACKGROUND IMAGE -->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="lookbook-product">
+                                    <h2><a href="#" title="">Collection 2016 </a></h2>
+                                    <ul class="simple-cat-style">
+                                        <li><a href="#" title="">Dresses</a></li>
+                                        <li><a href="#" title="">Coats & Jackets</a></li>
+                                        <li><a href="#" title="">Jeans</a></li>
+                                    </ul>
+                                    <a href="#" title="">read more</a>
                                 </div>
                             </div>
                         </div>
-                        <!-- Mini Service Sec -->
                     </div>
                 </div>
-            </div>
+            </section>
+            <section class="block gray no-padding">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="content-box no-margin go-simple">
+                                <div class="mini-service-sec">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <div class="mini-service">
+                                                <i class="fa fa-truck"></i>
+                                                <div class="mini-service-info">
+                                                    <h3>All India Delivery</h3>
+                                                </div>
+                                            </div>
+                                            <!-- Mini Service -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mini-service">
+                                                <i class="fa fa-check" aria-hidden="true"></i>
+                                                <div class="mini-service-info">
+                                                    <h3>All bill with GST invoice</h3>
+                                                </div>
+                                            </div>
+                                            <!-- Mini Service -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mini-service">
+                                                <i class="fa fa-desktop"></i>
+                                                <div class="mini-service-info">
+                                                    <h3>Best Priceing</h3>
+                                                </div>
+                                            </div>
+                                            <!-- Mini Service -->
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="mini-service">
+                                                <i class="fa  fa-windows"></i>
+                                                <div class="mini-service-info">
+                                                    <h3>Buy Lisence windows</h3>
+                                                </div>
+                                            </div>
+                                            <!-- Mini Service -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Mini Service Sec -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="clearfix"></div>
         </div>
     </section>
-    <div class="clearfix"></div>
-
 </main>
 <!-- end main content -->
 
