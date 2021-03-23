@@ -8,8 +8,10 @@ def index(request):
 def contact(request):
     return render(request, 'contact.html')
 
-def product(request):
-    return render(request, 'product.html')
+def product(request, id):
+    # Fetching the product using id
+    product = Product.objects.filter(id=id)
+    return render(request, 'product.html', {'product' : product[0]})
 
 def cart(request):
     return render(request, 'cart.html')
