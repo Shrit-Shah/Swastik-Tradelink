@@ -3,4 +3,5 @@ from .product import Product
 #from .managers import CategoeryManager, SubCategoeryManager
 from .category import Category
 from .Scategory import SubCategory
+from .customer import Customer
 
