@@ -155,21 +155,18 @@
                 {% for product in products %}
                 <div class="col-xs-12 col-sm-6 col-md-3 product-item filter-best">
                     <div class="product-img" id={{product.id}}>
-                        <img src="{{product.image.url}}" alt="product" style="width: 16rem;">
+                        <img src="{{product.image.url}}"  alt="product"  style="width: 16rem;">
                         <div class="product-hover">
                             <div class="product-cart">
-
-                                <form action="/#{{product.id}}" method="POST">{% csrf_token %}
-                                    <input type="hidden" name="product" value='{{product.id}}'>
-                                    <input class="btn btn-secondary btn-block" type="submit" value="Add To Cart">
-                                </form>
-
+                                <a href="/product/{{product.id}}">
+                                    <button class="btn btn-block btn-secondary">Add to Cart</button>
+                                </a>
                             </div>
-                            <div class="product-cart">
+                            <!--<div class="product-cart">
                                 <input class="col-2 btn btn-block btn-secondary" type="submit" value=" - ">
                                 <div class="text-center col">2 in cart</div>
                                 <input class="col-2 btn btn-block btn-secondary" type="submit" value=" + ">
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <!-- .product-img end -->
