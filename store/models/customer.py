@@ -14,14 +14,21 @@ class Customer(models.Model):
     def __str__(self):
         return self.firstname
 
+    @staticmethod
+    def get_customer_by_email(email):
+        try:
+            return Customer.objects.get(email=email)
+        except:
+            return False
+
     def isExistEmail(self):
-        if Customer.objects.filter(email = self.email):
+        if Customer.objects.filter(email=self.email):
             return True
 
         return False
 
     def isExistPhone(self):
-        if Customer.objects.filter(phone = self.phone):
+        if Customer.objects.filter(phone=self.phone):
             return True
 
         return False
