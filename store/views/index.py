@@ -9,17 +9,18 @@ class Index(View):
         return render(request, 'index.html', {'products': products})
 
     def post(self, request):
+        quantity = int(request.POST.get("quantity"))
         product = request.POST.get('product')
         cart = request.session.get('cart')
         if cart:
             qty = cart.get(product)
             if qty:
-                cart[product] = qty+1
+                cart[product] = qty+quantity
             else:
-                cart[product] = 1
+                cart[product] = quantity
         else:
             cart = {}
-            cart[product] = 1
+            cart[product] = quantity
 
         request.session['cart'] = cart
         print(request.session['cart'])

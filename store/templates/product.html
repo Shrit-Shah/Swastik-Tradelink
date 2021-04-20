@@ -57,13 +57,14 @@
                                 <p>{{product.description}}</p>
 
 
-                                <form class="variations_form cart" method="post">
-                                    <div class="quantity">
-                                      <!--  <input class="col-2 btn btn-block btn-secondary" type="submit" value=" - ">
-                                      <input class="col-2 btn btn-block btn-secondary" type="submit" value=" + ">-->
-                                        <input type="number" step="1" name="quantity" value="1" title="Qty" class="input-text qty text" size="4" min="1">
+                                <form action="/" method="POST">{% csrf_token %}
+                                    <div class="form-group">
+                                        Quantity : <input type="number" step="1" name="quantity" value="1" class="input-text qty text" size="4" min="1">
                                     </div>
-                                    <button type="submit" class="cart-button">Add to cart</button>
+                                    <input type="hidden" name="product" value='{{product.id}}'>
+                                    <div class="form-group">
+                                        <input herf="/" class="btn btn-primary btn-sm" type="submit" value="Add To Cart">
+                                    </div>
 
                                 </form>
 
@@ -95,7 +96,7 @@
                                         <h2>Product Description</h2>
 
                                         <p>
-                                           {{product.description}}
+                                            {{product.description}}
                                         </p>
 
                                         <h3 class="section-title">Related Products</h3>
