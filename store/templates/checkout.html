@@ -4,7 +4,7 @@
 
 {% load static %}
 
-{% block content %}
+{% block content %} {% load custom_filter %}
 
 <!-- start main content -->
 <main class="main-container">
@@ -33,116 +33,7 @@
 								<div class="container">
 									<h2 class="accordion-title">
 
-                                            <span>1. Informations
-                                            </span> <a class="accordion-btn open" data-toggle="collapse" href="#collapse-one"></a>
-									</h2>
-
-									<div class="accordion-body collapse in collapse-one" id="collapse-one">
-
-										<div class="row accordion-body-wrapper">
-
-											<div class="col-sm-6 padding-right-md">
-												<h3 class="subtitle">new customer</h3>
-
-												<p>Regiter with us for future convenience:</p>
-
-												<form action="#">
-
-													<div class="form-group custom-checkbox-wrapper">
-
-                                                            <span class="custom-checkbox-container">
-                                                                <input type="checkbox" name="guest" value="guest">
-
-                                                                <span class="custom-checkbox-icon"></span>
-                                                            </span>
-
-														<span>Checkout as Guest</span>
-													</div>
-
-													<div class="form-group custom-checkbox-wrapper">
-
-                                                            <span class="custom-checkbox-container">
-                                                                <input type="checkbox" name="register" value="register">
-
-                                                                <span class="custom-checkbox-icon"></span>
-                                                            </span>
-
-														<span>Register</span>
-													</div>
-
-													<div class="xs-margin">
-													</div>
-
-													<p>By creating an account with our store, you will be able to move through the checkout process faster, store multiple shipping addresses, view and track syour orders in your account and more.</p>
-
-													<div class="xs-margin">
-													</div>
-													<input type="submit" class="btn btn-lg btn-custom min-width-sm" value="continue">
-												</form>
-											</div>
-
-											<div class="md-margin visible-xs clearfix">
-											</div>
-
-											<div class="col-sm-6 padding-left-md">
-												<h3 class="subtitle">Registered customer</h3>
-
-												<p>If you have an account with us, please log in.</p>
-
-												<div class="xss-margin">
-												</div>
-
-												<form action="#">
-
-													<div class="form-group">
-														<label for="email" class="form-label">Enter your e-mail
-
-															<span class="required">*</span>
-														</label>
-														<input type="email" name="email" id="email" class="form-control input-lg" required>
-													</div>
-
-													<div class="form-group">
-														<label for="password" class="form-label">Enter your password
-
-															<span class="required">*</span>
-														</label>
-														<input type="password" name="password" id="password" class="form-control input-lg" required>
-													</div>
-
-													<div class="top-5px">
-													</div>
-
-													<div class="form-group custom-checkbox-wrapper">
-
-                                                            <span class="custom-checkbox-container">
-                                                                <input type="checkbox" name="remember" value="remember">
-
-                                                                <span class="custom-checkbox-icon"></span>
-                                                            </span>
-
-														<span>Remember Password</span>
-													</div>
-
-													<div class="xss-margin">
-													</div>
-													<input type="submit" class="btn btn-lg btn-custom min-width-sm" value="login">
-												</form>
-											</div>
-										</div>
-
-										<div class="lg-margin2x">
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="accordion-group panel darkerbg">
-
-								<div class="container">
-									<h2 class="accordion-title">
-
-                <span>2. Billing Informations
+                <span>1. Billing Information
                 </span> <a class="accordion-btn open" data-toggle="collapse" href="#collapse-two"></a></h2>
 
 									<div class="accordion-body collapse in" id="collapse-two">
@@ -368,7 +259,7 @@
 								<div class="container">
 									<h2 class="accordion-title">
 
-                <span>3. Delivery Details
+                <span>2. Delivery Details
                 </span> <a class="accordion-btn" data-toggle="collapse" href="#collapse-three"></a></h2>
 
 									<div class="accordion-body collapse" id="collapse-three">
@@ -392,7 +283,7 @@
 								<div class="container">
 									<h2 class="accordion-title">
 
-                <span>4. Delivery Method
+                <span>3. Delivery Method
                 </span> <a class="accordion-btn" data-toggle="collapse" href="#collapse-four"></a></h2>
 
 									<div class="accordion-body collapse" id="collapse-four">
@@ -416,7 +307,7 @@
 								<div class="container">
 									<h2 class="accordion-title mb-0">
 
-                <span>5. Confirm Order
+                <span>4. Confirm Order
                 </span> <a class="accordion-btn open" data-toggle="collapse" href="#collapse-five"></a></h2>
 
 									<div class="accordion-body collapse in" id="collapse-five">
@@ -429,7 +320,7 @@
 													<tr>
 														<th class="table-title">Product Name
 														</th>
-														<th class="table-title">Product Code
+														<th class="table-title">Product ID
 														</th>
 														<th class="table-title">Unit Price
 														</th>
@@ -444,80 +335,48 @@
 														</th>
 													</tr>
 													</thead>
+
 													<tbody>
+													{% load cart %}
+													{% for product in products %}
 													<tr>
 														<td class="product-name-col">
 															<figure>
-																<a href="#"><img src="{% static 'img/product/special-item-1.jpg' %}" alt="White linen sheer dress"></a>
+																<a href="#"><img src="{{product.image.url}}" alt=""></a>
 															</figure>
-															<h3 class="product-name"><a href="#">ABC</a></h3>
-															<ul>
-																<li>Color: XYZ</li>
-																<li>Size: xyz</li>
-															</ul>
+															<h3 class="product-name"><a href="#">{{product.name}}</a></h3>
+
 														</td>
-														<td class="product-code">abc
+														<td class="product-code">{{product.id}}
 														</td>
 														<td class="product-price-col">
 
-                                                                    <span class="product-price-special">Price in Rs
+                                                                    <span class="product-price-special">{{product.price|currency}}
                 </span>
 														</td>
 														<td>
 
 															<div class="custom-quantity-input">
-																<input type="text" name="quantity" value="1">
+																<input type="text" name="quantity" value="{{product|cart_quantity:request.session.cart}}">
 															</div>
 														</td>
 														<td class="product-total-col">
 
-                                                                    <span class="product-price-special">Price in Rs
+                                                                    <span class="product-price-special">{{product|price_total:request.session.cart|currency}}
                 </span>
 														</td>
 														<td>
 															<a href="#" class="close-button"></a>
 														</td>
 													</tr>
-													<tr>
-														<td class="product-name-col">
-															<figure>
-																<a href="#"><img src="{% static 'img/product/special-item-2.jpg' %}" alt="Black lace open back dress"></a>
-															</figure>
-															<h3 class="product-name"><a href="#">DEF</a></h3>
-															<ul>
-																<li>Color: ABC</li>
-																<li>Size: abc</li>
-															</ul>
-														</td>
-														<td class="product-code">def
-														</td>
-														<td class="product-price-col">
-
-                                                                    <span class="product-price-special">Price in Rs
-                </span>
-														</td>
-														<td>
-
-															<div class="custom-quantity-input">
-																<input type="text" name="quantity" value="1">
-															</div>
-														</td>
-														<td class="product-total-col">
-
-                                                                    <span class="product-price-special">Price in Rs
-                </span>
-														</td>
-														<td>
-															<a href="#" class="close-button"></a>
-														</td>
-													</tr>
+													{% endfor %}
 													<tr class="merged">
 														<td class="checkout-table-title" colspan="4">
 
                                                                     <span>Subtotal:
                 </span>
 														</td>
-														<td class="checkout-table-price" colspan="2">Total price in Rs
+														<td class="checkout-table-price" colspan="2">{{products|total_cart_price:request.session.cart|currency}}
 														</td>
 													</tr>
 													<tr class="merged">
@@ -546,7 +405,7 @@
                                                                     <span>TOTAL:
                 </span>
 														</td>
-														<td class="checkout-total-price cart-total" colspan="2">Total price in Rs
+														<td class="checkout-total-price cart-total" colspan="2">{{products|total_cart_price:request.session.cart|currency}}
 														</td>
 													</tr>
 													</tfoot>

@@ -34,7 +34,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-sm-6 col-md-7 product-review entry-summary">
+                            <div class="col-sm-6 col-md-7 product-review entry-summary" id={{product.id}}>
 
                                 <h1 class="product_title">{{product.name}}</h1>
 
@@ -57,7 +57,7 @@
                                 <p>{{product.description}}</p>
 
 
-                                <form action="/" method="POST">{% csrf_token %}
+                                <form action="/#{{product.id}}" method="POST">{% csrf_token %}
                                     <div class="form-group">
                                         Quantity : <input type="number" step="1" name="quantity" value="1" class="input-text qty text" size="4" min="1">
                                     </div>

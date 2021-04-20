@@ -18,16 +18,18 @@ from django.urls import path , include
 from store.views import cart, checkout, contact, index, product, signin, signup
 from . import settings
 from django.conf.urls.static import static
-from store.views.cart import Cart
+from store.views.signin import signout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index.Index.as_view(), name='homepage'),
     path('contact', contact.contact, name='contact'),
     path('product/<int:id>', product.product, name='product'),
-    path('cart', Cart.as_view(), name='cart'),
-    path('checkout', checkout.checkout, name='checkout'),
+    path('cart', cart.Cart.as_view(), name='cart'),
+    path('checkout', checkout.Checkout.as_view(), name='checkout'),
     path('signup', signup.Signup.as_view(), name='signup'),
     path('signin', signin.Signin.as_view(), name='signin'),
+    path('signout', signout, name='signout'),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

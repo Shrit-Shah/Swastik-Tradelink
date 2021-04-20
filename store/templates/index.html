@@ -1,4 +1,4 @@
- {% extends 'base.html' %} {% block content %} {% load static %} {% load cart %}
+ {% extends 'base.html' %} {% block content %} {% load static %} {% load cart %} {% load custom_filter %}
 
 <!-- start main content -->
 <main class="main-container">
@@ -165,7 +165,7 @@
                         <h4>
                             <a href="/product/{{product.id}}">{{product.name}}</a>
                         </h4>
-                        <p class="product-price">Rs {{product.price}}</p>
+                        <p class="product-price">{{product.price|currency}}</p>
                     </div>
                 </div>
                 <!-- .product-bio end -->
@@ -435,7 +435,7 @@
                                             <div class="mini-service">
                                                 <i class="fa fa-desktop"></i>
                                                 <div class="mini-service-info">
-                                                    <h3>Best Priceing</h3>
+                                                    <h3>Best Pricing</h3>
                                                 </div>
                                             </div>
                                             <!-- Mini Service -->
@@ -444,7 +444,7 @@
                                             <div class="mini-service">
                                                 <i class="fa  fa-windows"></i>
                                                 <div class="mini-service-info">
-                                                    <h3>Buy Lisence windows</h3>
+                                                    <h3>Buy Licence windows</h3>
                                                 </div>
                                             </div>
                                             <!-- Mini Service -->

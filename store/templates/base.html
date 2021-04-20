@@ -6,7 +6,7 @@
 <html class="no-js">
 <!--<![endif]-->
 
-{% load static %}
+{% load static %} {% load cart %} {% load custom_filter %}
 
 <head>
     <title>{% block title %}Homepage | Swastik Tradelink{% endblock %}</title>
@@ -84,36 +84,12 @@
                 <!-- Shopping carrt starts -->
                 <div class="tb-shopping-cart pull-right">
                     <!-- Link with badge -->
-                    <a href="#" class="btn btn-white btn-xs b-dropdown"><i class="fa fa-shopping-cart"></i> <i class="fa fa-angle-down color"></i> <span class="badge badge-color">2</span></a>
-                    <!-- Dropdown content with item details -->
-                    <div class="b-dropdown-block">
-                        <!-- Heading -->
-                        <h4><i class="fa fa-shopping-cart color"></i> Your Items</h4>
-                        <ul class="list-unstyled">
-                            <!-- we will edit it after the database is redy -->
-                            <!-- Item 1 -->
-                            <!---->
-                            <!---->
-                            <li>
-                                <!-- Item image -->
-                                <div class="{% static 'cart-img' %}">
-                                    <a href="#"><img src="{% static 'img/ecommerce/view-cart/1.png' %}" alt="" class="img-responsive" /></a>
-                                </div>
-                                <!-- Item heading and price -->
-                                <div class="cart-title">
-                                    <h5><a href="#">Product Name</a></h5>
-                                    <!-- Item price -->
-                                    <span class="label label-color label-sm">Price in Rs</span>
-                                </div>
-                                <div class="clearfix"></div>
-                            </li>
-                            <!-- Item 2 -->
-                        </ul>
-                        <a href="/cart" class="btn btn-white btn-sm">View Cart</a> &nbsp;
-                        <a href="/checkout" class="btn btn-color btn-sm">Checkout</a>
-                    </div>
+                    {% if request.session.cart %}
+                    <a href="/cart" class="btn btn-white btn-xs"><i class="fa fa-shopping-cart"></i> <i class="fa fa-angle-down color"></i> <span class="badge badge-color">{{request.session.cart.keys|length}}</span></a>
+                    {% else %}
+                    <a href="/" class="btn btn-white btn-xs"><i class="fa fa-shopping-cart"></i> <i class="fa fa-angle-down color"></i> <span class="badge badge-color">{{request.session.cart.keys|length}}</span></a>
+                    {% endif %}
                 </div>
-                <!-- Shopping kart ends -->
 
                 <!-- Search section for responsive design -->
                 <div class="tb-search pull-left">
@@ -290,9 +266,12 @@
 
                             <li><a href="about.html">Build PC</a></li>
                             <li><a href="/contact">Contact Us</a></li>
-                            <li class="sign"><a href="/">Sign Out</a></li>
+                            {% if request.session.customer %}
+                            <li class="sign"><a href="/signout">Sign Out</a></li>
+                            {% else %}
                             <li class="sign"><a href="/signin">Sign In</a></li>
                             <li class="sign"><a href="/signup">Sign Up</a></li>
+                            {% endif %}
                         </ul>
                     </div>
                 </div>

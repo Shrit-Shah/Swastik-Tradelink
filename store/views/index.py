@@ -5,7 +5,6 @@ from django.views import View
 class Index(View):
     def get(self, request):
         products = Product.get_all_products()
-        print('you are : ', request.session.get('customer_email'))
         return render(request, 'index.html', {'products': products})
 
     def post(self, request):
@@ -23,5 +22,5 @@ class Index(View):
             cart[product] = quantity
 
         request.session['cart'] = cart
-        print(request.session['cart'])
+
         return redirect('homepage')

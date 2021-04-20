@@ -1,4 +1,5 @@
 {% extends 'base.html' %} {% block title %}Cart | Swastik Tradelink{% endblock %} {% load static %} {% block content %}
+{% load custom_filter %}
 <!-- start main content -->
 <main class="main-container">
     <!-- shopping cart content -->
@@ -16,13 +17,13 @@
                         <div class="row">
 
                             <div class="col-md-12">
-                                {{products}} {% load cart %}
+                                {% load cart %}
                                 <!-- Begin table -->
                                 <table class="table cart-table">
                                     <thead>
                                         <tr>
                                             <th class="table-title">Product Name</th>
-                                            <th class="table-title">Product Code</th>
+                                            <th class="table-title">Product ID</th>
                                             <th class="table-title">Unit Price</th>
                                             <th class="table-title">Quantity</th>
                                             <th class="table-title">SubTotal</th>
@@ -42,25 +43,27 @@
                                                 </figure>
                                                 <h2 class="product-name"><a href="#">{{product.name}}</a></h2>
                                             </td>
-                                            <td class="product-code">abc</td>
+                                            <td class="product-code">{{product.id}}</td>
                                             <td class="product-price-col">
-                                                <span class="product-price-special">{{product.price}} Rs</span>
+                                                <span class="product-price-special">{{product.price|currency}}</span>
                                             </td>
                                             <td>
                                                 <div class="custom-quantity-input">
-                                                    <span class="product-price-special">{{product|cart_quantity:request.session.cart}} Rs</span>
+                                                    <span class="product-price-special">{{product|cart_quantity:request.session.cart}} pcs</span>
                                                 </div>
                                             </td>
                                             <td class="product-total-col">
-                                                <span class="product-price-special">{{product|price_total   :request.session.cart}} Rs</span>
+                                                <span class="product-price-special">{{product|price_total:request.session.cart|currency}}</span>
                                             </td>
                                             <td>
+
                                                 <a href="#" class="close-button"><i class="fa fa-times"></i></a>
+
                                             </td>
                                         </tr>
                                         <!-- End tr -->
                                     </tbody>
-                                    {% end for %}
+                                    {% endfor %}
 
                                 </table>
                                 <!-- End table -->
@@ -192,7 +195,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="total-table-title">Subtotal:</td>
-                                                    <td>Total Price in Rs</td>
+                                                    <td>{{products|total_cart_price:request.session.cart|currency}}</td>
                                                 </tr>
                                                 <tr>
                                                     <td class="total-table-title">Shipping:</td>
@@ -207,16 +210,20 @@
                                             <tfoot>
                                                 <tr>
                                                     <td>Total:</td>
-                                                    <td>Total price in Rs</td>
+                                                    <td>{{products|total_cart_price:request.session.cart|currency}}</td>
                                                 </tr>
                                             </tfoot>
                                         </table>
                                         <!-- End table -->
 
                                         <div class="mt-30"></div>
-
+                                        {% if request.session.customer %}
                                         <div class="text-right"><a href="/checkout" class="btn btn-custom-6 btn-lger min-width-sm">Checkout</a>
                                         </div>
+                                        {% else %}
+                                        <div class="text-right"><a href="/signin" class="btn btn-custom-6 btn-lger min-width-sm">Checkout</a>
+                                        </div>
+                                        {% endif %}
 
                                     </div>
                                     <!-- /.col-md-4 -->

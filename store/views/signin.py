@@ -16,8 +16,7 @@ class Signin(View):
         if customer:
             flag = check_password(password, customer.password)
             if flag:
-                request.session['customer_id'] = customer.id
-                request.session['customer_email'] = customer.email
+                request.session['customer'] = customer.id
                 return redirect('homepage')
             else:
                 error_msg = "Incorrect Password!"
@@ -25,3 +24,7 @@ class Signin(View):
             error_msg = 'Email or Password Invalid!'
 
         return render(request, 'signin.html', {'error': error_msg})
+
+def signout(request):
+    request.session.clear()
+    return redirect('signin')
