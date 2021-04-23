@@ -56,8 +56,10 @@
                                                 <span class="product-price-special">{{product|price_total:request.session.cart|currency}}</span>
                                             </td>
                                             <td>
-
-                                                <a href="#" class="close-button"><i class="fa fa-times"></i></a>
+                                                <form action="/cart" method="POST">{% csrf_token %}
+                                                    <input type="hidden" name="product" value='{{product.id}}'>
+                                                    <input href="/cart" class="btn btn-dark btn-sm" type="submit" value="X">
+                                                </form>
 
                                             </td>
                                         </tr>
