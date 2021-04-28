@@ -40,7 +40,7 @@ class Signup(View):
             return render(request, 'signup.html', data)
 
     def validateCustomer(self, customer, repassword):
-        error_msg = None;
+        error_msg = None
 
         if not customer.firstname:
             error_msg = "First Name is Required!"
@@ -52,7 +52,7 @@ class Signup(View):
             error_msg = "Last Name must be 3 characters long!"
         elif not customer.phone:
             error_msg = "Phone No. is Required!"
-        elif len(customer.phone) < 10:
+        elif (len(customer.phone) < 10 or len(customer.phone) > 10):
             error_msg = "Phone No. must be a 10 digit number!"
         elif not customer.email:
             error_msg = "Email Address is Required!"
@@ -60,7 +60,7 @@ class Signup(View):
             regex = '^[a-z0-9]+[\._]?[a-z0-9]+[@]\w+[.]\w{2,3}$'
             if not (re.search(regex, customer.email)):
                 error_msg = "Invalid Email!"
-        elif not customer.password:
+        if not customer.password:
             error_msg = "Password is Required!"
         elif len(customer.password) < 8:
             error_msg = "Password must be 8 characters long!"
